@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/static/Images/logo_piccolo.png"/>
+  <title>Login - Cineticket </title>
+  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/stylesheet/Login.css">
+
+  <!--Manifest-->
+  <link rel="manifest" href="/static/js/manifest.json">
+  <meta name="theme-color" content="white"/>
+
+  <!--Apple touch icon-->
+  <link rel="apple-touch-icon" href="/static/Images/logo_piccolo.png">
+
+</head>
+<body id="body_login">
+<div class="main-container">
+  <div class="form-container">
+
+    <div class="form-body">
+      <h2 class="title">Log in with</h2>
+      <div class="social-login">
+        <ul>
+          <li class="google"><a href="/login_google">Google</a></li>
+        </ul>
+      </div><!-- SOCIAL LOGIN -->
+
+      <div class="_or">or</div>
+
+      <form method="post" action="/login" class="the-form">
+        {{ form.hidden_tag() }}
+        <div>
+          <label>Email:</label>
+            {{ form.email }}
+        </div>
+        <div>
+          <label>Password:</label>
+            {{ form.password }}
+        </div>
+        <div>
+          {{msg}}
+          {{ form.submit }}
+        </div>
+      </form>
+
+    </div><!-- FORM BODY-->
+
+    <div class="form-footer">
+      <div>
+        <span>Don't have an account?</span> <a href="{{ url_for('signup') }}">Sign Up</a>
+      </div>
+    </div><!-- FORM FOOTER -->
+
+    <div class="form-footer">
+      <div>
+        <span>Do you want to log in as a guest user?</span> <a href="{{ url_for('home') }}">Click Here</a>
+      </div>
+    </div><!-- FORM FOOTER -->
+
+  </div><!-- FORM CONTAINER -->
+</div>
+
+<script src="/static/js/main.js"></script>
+</body>
+</html>
